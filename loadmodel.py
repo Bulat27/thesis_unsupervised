@@ -13,6 +13,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--seed', type=int, default=42, help='Random seed.')
 parser.add_argument('--num_of_nodes', type=int, default=100, help='Graph Size')
+parser.add_argument('--num_pretrained', type=int, default=100, help='Used for loading the model') # My addition, let's try
 parser.add_argument('--lr', type=float, default=1e-3,
                     help='Learning Rate')
 parser.add_argument('--smoo', type=float, default=0.1,
@@ -151,7 +152,7 @@ def test(loader,topk = 20):
 
 
 #TSP200
-model_name = 'Saved_Models/TSP_%d/scatgnn_layer_2_hid_%d_model_210_temp_3.500.pth'%(args.num_of_nodes,args.hidden)# topk = 10
+model_name = 'Saved_Models/TSP_%d/scatgnn_layer_2_hid_%d_model_210_temp_3.500.pth'%(args.num_pretrained,args.hidden)# topk = 10
 model.load_state_dict(torch.load(model_name))
 #Saved_indices,Saved_Values,Saved_sol,Saved_pos = test(test_loader,topk = 8) # epoch=20>10 
 Saved_indices,Saved_Values,Saved_sol,Saved_pos = test(test_loader,topk = args.topk) # epoch=20>10
