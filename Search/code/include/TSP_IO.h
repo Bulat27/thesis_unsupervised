@@ -16,7 +16,7 @@ using namespace std;
 #define Inf_Cost           1000000000
 #define Magnify_Rate       1000000
 #define Max_Inst_Num       128// change 128->10000 if working on TSP-20,50,100
-#define Max_City_Num       200
+#define Max_City_Num       500
 int Max_Candidate_Num = 5;
 int Max_Depth = 10;
 int restart;
@@ -25,7 +25,7 @@ int restart;
 double Alpha=1;       //used in estimating the potential of each edge
 double Beta=10;       //used in back propagation
 double Param_H=3;   //used to control the number of sampling actions
-double Param_T=0.08;  	 //used to control the termination condition
+double Param_T=0.04;  	 //used to control the termination condition
 
 
 //#define Default_Random_Seed  (unsigned)time(NULL);
